@@ -3,51 +3,55 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { View, Text, Image } from 'react-native';
 import { Card, CardSection } from './common';
 
-const SeatDetail = () => {
-  const {
-    thumbnailContainerStyle,
-    thumbnailStyle,
-    headerContentStyle,
-    headerTextStyle,
-    imageStyle,
-    footerTextStyle,
-    iconStyle,
-    infoTextStyle,
-    timerStyle,
-    timerTextStyle
-  } = styles;
+class SeatDetail extends React.Component {
+  render() {
 
-  return (
-     <Card>
-      <CardSection>
-        <View style={thumbnailContainerStyle}>
+    const {
+      thumbnailContainerStyle,
+      thumbnailStyle,
+      headerContentStyle,
+      headerTextStyle,
+      imageStyle,
+      footerTextStyle,
+      iconStyle,
+      infoTextStyle,
+      timerStyle,
+      timerTextStyle
+    } = styles;
+    const { id, title, host, address, hour, thumbnail, image } = this.props.seat;
+
+    return (
+       <Card>
+        <CardSection>
+          <View style={thumbnailContainerStyle}>
+            <Image
+              style={thumbnailStyle}
+              source={{uri: thumbnail}}
+            />
+          </View>
+          <View style={headerContentStyle}>
+            <Text style={headerTextStyle}>{host}</Text>
+            <Text style={infoTextStyle}><Icon style={timerStyle} name={'timer'} />{hour} <Text style={timerTextStyle}>Open</Text></Text>
+          </View>
+        </CardSection>
+
+        <CardSection>
           <Image
-            style={thumbnailStyle}
-            source={{ uri: 'https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/1914770_762645513836773_6796242385082186893_n.jpg?oh=be0fe37585fb100d467554441133f725&oe=5AEB60F1'}}
+            style={imageStyle}
+            source={{ uri: image}}
           />
-        </View>
-        <View style={headerContentStyle}>
-          <Text style={headerTextStyle}>Shun Yamada</Text>
-          <Text style={infoTextStyle}><Icon style={timerStyle} name={'timer'} />11:00 <Text style={timerTextStyle}>Open</Text></Text>
-        </View>
-      </CardSection>
+        </CardSection>
 
-      <CardSection>
-        <Image
-          style={imageStyle}
-          source={{ uri: 'https://static.pexels.com/photos/265072/pexels-photo-265072.jpeg'}}
-        />
-      </CardSection>
-
-      <CardSection>
-        <View>
-          <Text style={footerTextStyle}>LODGE</Text>
-          <Text style={infoTextStyle}><Icon style={iconStyle} name={'map-marker'} />511 Mission St, SanFarncisco</Text>
-        </View>
-      </CardSection>
-     </Card>
-   );
-};
+        <CardSection>
+          <View>
+            <Text style={footerTextStyle}>{title}</Text>
+            <Text style={infoTextStyle}><Icon style={iconStyle} name={'map-marker'} />{address}</Text>
+          </View>
+        </CardSection>
+       </Card>
+     );
+   }
+}
 
 const styles = {
   headerContentStyle: {
