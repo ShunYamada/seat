@@ -1,11 +1,42 @@
 [
   {
     "id": 0,
-    "title": "LODGE",
+    "title": "The Room of Alamo Square",
     "host": "Shun Yamada",
-    "address": "511 Mission St, SanFrancisco",
-    "hour": "11:00",
+    "address": "Stenier St Hayes St, SanFrancisco",
+    "hour": "11:00 PM",
+    "price": 5.0,
     "thumbnail": "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/1914770_762645513836773_6796242385082186893_n.jpg?oh=be0fe37585fb100d467554441133f725&oe=5AEB60F1",
     "image": "https://static.pexels.com/photos/265072/pexels-photo-265072.jpeg"
+  },
+  {
+    "id": 1,
+    "title": "Knowledge Society",
+    "host": "Tai Mino",
+    "address": "1-5-6 Kudanshita St, Tokyo",
+    "hour": "9:00 AM +1",
+    "price": 10.0,
+    "thumbnail": "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/19420591_1890942977586125_3610151752327937506_n.jpg?oh=49ddb89027ec5dbfdfe30510c013c6cd&oe=5B208EB7",
+    "image": "https://www.k-society.com/wp-content/themes/ks/images/slide_b_003.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Amazing Beach House",
+    "host": "Taylor Swift",
+    "address": "Stenier St Hayes St, SanFrancisco",
+    "hour": "10:00 PM",
+    "price": 120,
+    "thumbnail": "https://www.billboard.com/files/styles/article_main_image/public/media/taylor-swift-2014-sarah-barlow-billboard-650.jpg",
+    "image": "https://i1.wp.com/dianepenelope.com/wp-content/uploads/2017/05/taylor-swift-house-hamptons-style.jpg?fit=700%2C484"
+  },
+  {
+    "id": 3,
+    "title": "Starbucks",
+    "host": "Keisuke Taniguchi",
+    "address": "201 Powell St, SanFrancisco",
+    "hour": "2:00 PM",
+    "price": "0.0",
+    "thumbnail": "https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/14713507_1792286894345459_384049308228564870_n.jpg?oh=a1592add7267b32b4fac6279d70ea0c0&oe=5AEBAD7D",
+    "image": "https://www.vosizneias.com/wp-content/uploads/2013/04/HK_Kln_Bay_EMAX_Starbucks_Coffee.jpg"
   },
 ]

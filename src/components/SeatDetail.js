@@ -12,13 +12,14 @@ class SeatDetail extends React.Component {
       headerContentStyle,
       headerTextStyle,
       imageStyle,
+      labelStyle,
       footerTextStyle,
       iconStyle,
       infoTextStyle,
       timerStyle,
       timerTextStyle
     } = styles;
-    const { id, title, host, address, hour, thumbnail, image } = this.props.seat;
+    const { id, title, host, address, hour, price, thumbnail, image } = this.props.seat;
 
     return (
        <Card>
@@ -40,6 +41,7 @@ class SeatDetail extends React.Component {
             style={imageStyle}
             source={{ uri: image}}
           />
+          <Text style={labelStyle}>${price}</Text>
         </CardSection>
 
         <CardSection>
@@ -76,7 +78,21 @@ const styles = {
   imageStyle: {
     height: 240,
     flex: 1,
-    width: null
+    width: null,
+    position: 'relative'
+  },
+  labelStyle: {
+    fontSize: 18,
+    color: '#fff',
+    backgroundColor: '#000',
+    top: 200,
+    left: 10,
+    paddingRight: 20,
+    paddingLeft: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
+    opacity: 0.9,
+    position: 'absolute'
   },
   footerTextStyle: {
     fontSize: 24,
