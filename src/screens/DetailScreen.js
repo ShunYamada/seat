@@ -1,17 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
-import SeatList from '../components/SeatList';
+import { View, Text } from 'react-native';
+import SeatDetail from '../components/SeatDetail';
 
-const ListScreen = ({ navigation }) => {
+const DetailScreen = () => {
   return (
     <View>
-      <SeatList />
+      <SeatDetail />
     </View>
   );
 };
-
-ListScreen.navigationOptions = () => ({
-  title: 'Home',
+DetailScreen.navigationOptions = {
+  title: 'Detail',
   headerStyle: {
     backgroundColor: '#36bfce',
     justifyContent: 'center',
@@ -27,6 +26,6 @@ ListScreen.navigationOptions = () => ({
     color: '#fff',
     fontWeight: 'bold'
   }
-});
+};
 
-export default ListScreen;
+export default DetailScreen;

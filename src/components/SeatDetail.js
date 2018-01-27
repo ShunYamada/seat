@@ -1,106 +1,110 @@
 import React from 'react';
+import { View, Text, Image, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { View, Text, Image } from 'react-native';
-import { Card, CardSection } from './common';
+import { DetailSection, ImageSection } from './common';
 
 class SeatDetail extends React.Component {
   render() {
-
     const {
-      thumbnailContainerStyle,
-      thumbnailStyle,
-      headerContentStyle,
-      headerTextStyle,
       imageStyle,
-      labelStyle,
-      footerTextStyle,
-      iconStyle,
+      titleTextStyle,
       infoTextStyle,
       timerStyle,
-      timerTextStyle
+      timerTextStyle,
+      categoryTextStyle,
+      mainTextStyle,
+      thumbnailStyle,
+      thumbnailContainerStyle,
+      amenityStyle,
+      amenityIconStyle,
+      navStyle,
+      sectionStyle,
+      iconStyle
     } = styles;
-    const { id, title, host, address, hour, price, thumbnail, image } = this.props.seat;
 
     return (
-       <Card>
-        <CardSection>
-          <View style={thumbnailContainerStyle}>
+      <ScrollView style={{ backgroundColor: '#fff' }}>
+        <ImageSection>
+         <Image
+            style={imageStyle}
+            source={{uri: 'https://static.pexels.com/photos/265072/pexels-photo-265072.jpeg'}}
+          />
+        </ImageSection>
+
+        <DetailSection>
+          <View>
+            <Text style={titleTextStyle}>The Room of Alamo Square</Text>
+            <Text style={infoTextStyle}><Icon style={timerStyle} name={'timer'} />11:00 <Text style={timerTextStyle}>Open</Text></Text>
+          </View>
+        </DetailSection>
+
+        <DetailSection style={thumbnailContainerStyle}>
+          <View>
+            <Text style={categoryTextStyle}>Cafe</Text>
+            <Text>Hosted by <Text style={mainTextStyle}>Shun Yamada</Text></Text>
+          </View>
+          <View>
             <Image
               style={thumbnailStyle}
-              source={{uri: thumbnail}}
+              source={{uri: 'https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/1914770_762645513836773_6796242385082186893_n.jpg?oh=be0fe37585fb100d467554441133f725&oe=5AEB60F1'}}
             />
           </View>
-          <View style={headerContentStyle}>
-            <Text style={headerTextStyle}>{host}</Text>
-            <Text style={infoTextStyle}><Icon style={timerStyle} name={'timer'} />{hour} <Text style={timerTextStyle}>Open</Text></Text>
+        </DetailSection>
+
+        <DetailSection style={{ justifyContent: 'space-around' }}>
+          <View style={amenityStyle}>
+            <Text style={mainTextStyle}>WiFi</Text>
+            <Icon style={amenityIconStyle} name={'wifi'} />
+            <Text>Available</Text>
           </View>
-        </CardSection>
+          <View style={amenityStyle}>
+            <Text style={mainTextStyle}>Charge</Text>
+            <Icon style={amenityIconStyle} name={'power-plug'} />
+            <Text>Unavailable</Text>
+          </View>
+          <View style={amenityStyle}>
+            <Text style={mainTextStyle}>Numbers</Text>
+            <Icon style={amenityIconStyle} name={'account-multiple'} />
+            <Text>2 seats</Text>
+          </View>
+        </DetailSection>
 
-        <CardSection>
-          <Image
-            style={imageStyle}
-            source={{ uri: image}}
-          />
-          <Text style={labelStyle}>${price}</Text>
-        </CardSection>
-
-        <CardSection>
+        <DetailSection>
           <View>
-            <Text style={footerTextStyle}>{title}</Text>
-            <Text style={infoTextStyle}><Icon style={iconStyle} name={'map-marker'} />{address}</Text>
+            <Text style={navStyle}>About Host</Text>
+            <Text styke={sectionStyle}>Hey, Whats up guys! I am Shun, Freerider.
+              Lets Talk and connect, I like meeting stranger:)
+              I am from japan. Nice to meet you guys.</Text>
           </View>
-        </CardSection>
-       </Card>
-     );
-   }
+        </DetailSection>
+
+        <DetailSection>
+          <View>
+            <Text style={navStyle}>Rental Staffs</Text>
+            <Text style={mainTextStyle}>#iPhoneCable #AndroidCable #MacBookProCable</Text>
+          </View>
+        </DetailSection>
+
+        <DetailSection>
+          <View>
+            <Text style={navStyle}>Address</Text>
+            <Text style={infoTextStyle}><Icon style={iconStyle} name={'map-marker'} />Stenier St Hayes St, SanFrancisco</Text>
+          </View>
+        </DetailSection>
+      </ScrollView>
+    );
+  }
 }
 
 const styles = {
-  headerContentStyle: {
-    flexDirection: 'column',
-    justifyContent: 'space-around'
-  },
-  headerTextStyle: {
-    fontSize: 18,
-    fontWeight: 'bold'
-  },
-  thumbnailStyle: {
-    height: 50,
-    width: 50,
-    borderRadius: 25
-  },
-  thumbnailContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 10,
-    marginRight: 10
-  },
   imageStyle: {
     height: 240,
     flex: 1,
     width: null,
-    position: 'relative'
   },
-  labelStyle: {
-    fontSize: 18,
-    color: '#fff',
-    backgroundColor: '#000',
-    top: 200,
-    left: 10,
-    paddingRight: 20,
-    paddingLeft: 10,
-    paddingTop: 5,
-    paddingBottom: 5,
-    opacity: 0.9,
-    position: 'absolute'
-  },
-  footerTextStyle: {
+  titleTextStyle: {
     fontSize: 24,
     fontWeight: 'bold'
-  },
-  iconStyle: {
-    fontSize: 18,
-    color: '#949494'
   },
   infoTextStyle: {
     marginTop: 5,
@@ -113,7 +117,38 @@ const styles = {
   },
   timerTextStyle: {
     color: '#41a700'
+  },
+  categoryTextStyle: {
+    fontSize: 24,
+    fontWeight: 'bold'
+  },
+  mainTextStyle: {
+    fontSize: 16,
+    color: '#36bfce'
+  },
+  thumbnailStyle: {
+    height: 60,
+    width: 60,
+    borderRadius: 30
+  },
+  thumbnailContainerStyle: {
+    justifyContent: 'space-between',
+    alignItems: 'flex-end'
+  },
+  amenityIconStyle: {
+    fontSize: 30,
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  navStyle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10
+  },
+  iconStyle: {
+    fontSize: 18,
+    color: '#949494'
   }
-};
+}
 
 export default SeatDetail;

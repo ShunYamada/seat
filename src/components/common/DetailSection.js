@@ -18,6 +18,8 @@ const styles = {
     flexDirection: 'row',
     borderColor: '#eee',
     position: 'relative',
+    marginRight: 10,
+    marginLeft: 10
   }
 };
 

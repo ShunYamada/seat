@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListView } from 'react-native';
 import { connect } from 'react-redux';
-import SeatDetail from './SeatDetail';
+import SeatItem from './SeatItem';
 
 class SeatList extends React.Component {
   componentWillMount() {
@@ -13,7 +13,7 @@ class SeatList extends React.Component {
   }
 
   renderRow(seat) {
-    return <SeatDetail seat={seat} />;
+    return <SeatItem seat={seat} />;
   }
 
   render() {
