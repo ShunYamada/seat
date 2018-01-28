@@ -1,10 +1,10 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 
-const Card = (props) => {
+const Card = ({onPress, children}) => {
   return (
-    <TouchableOpacity style={styles.containerStyle}>
-      {props.children}
+    <TouchableOpacity onPress={onPress} style={styles.containerStyle}>
+      {children}
     </TouchableOpacity>
   );
 };

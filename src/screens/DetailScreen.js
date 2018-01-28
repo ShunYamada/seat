@@ -10,7 +10,7 @@ const DetailScreen = () => {
   );
 };
 DetailScreen.navigationOptions = {
-  title: 'Detail',
+  title: 'Seat',
   headerStyle: {
     backgroundColor: '#36bfce',
     justifyContent: 'center',

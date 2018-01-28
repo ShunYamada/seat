@@ -3,3 +3,7 @@ export { default as Card } from './Card';
 export { default as CardSection } from './CardSection';
 export { default as ImageSection } from './ImageSection';
 export { default as DetailSection } from './DetailSection';
+export { default as FooterSection } from './FooterSection';
+export { default as Button } from './Button';
+export { default as Confirm } from './Confirm';
+export { default as Decline } from './Decline';

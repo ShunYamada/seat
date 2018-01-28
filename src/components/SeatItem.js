@@ -4,9 +4,16 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Card, CardSection } from './common';
 
 class SeatItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onCardPress = this.onCardPress.bind(this);
+  }
+
+  onCardPress() {
+    this.props.navigation.navigate('Detail', seat);
+  }
 
   render() {
-
     const {
       thumbnailContainerStyle,
       thumbnailStyle,
@@ -23,7 +30,7 @@ class SeatItem extends React.Component {
     const { id, title, host, address, hour, price, thumbnail, image } = this.props.seat;
 
     return (
-       <Card>
+       <Card onPress={this.onCardPress}>
         <CardSection>
           <View style={thumbnailContainerStyle}>
             <Image
