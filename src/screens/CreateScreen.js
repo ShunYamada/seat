@@ -1,16 +1,16 @@
 import React from 'react';
-import { View } from 'react-native';
-import SeatDetail from '../components/SeatDetail';
+import { View, Text } from 'react-native';
 
-const DetailScreen = () => {
+const CreateScreen = () => {
   return (
     <View>
-      <SeatDetail />
+      <Text>Hello</Text>
     </View>
   );
 };
-DetailScreen.navigationOptions = {
-  title: 'Seat',
+
+CreateScreen.navigationOptions = {
+  title: 'Create Seat',
   headerStyle: {
     backgroundColor: '#36bfce',
     justifyContent: 'center',
@@ -28,4 +28,4 @@ DetailScreen.navigationOptions = {
   }
 };
 
-export default DetailScreen;
+export default CreateScreen;

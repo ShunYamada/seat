@@ -2,16 +2,10 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Card, CardSection } from './common';
+import { connect } from 'react-redux';
+import { StackNavigator } from 'react-navigation';
 
 class SeatItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onCardPress = this.onCardPress.bind(this);
-  }
-
-  onCardPress() {
-    this.props.navigation.navigate('Detail', seat);
-  }
 
   render() {
     const {
@@ -28,9 +22,11 @@ class SeatItem extends React.Component {
       timerTextStyle
     } = styles;
     const { id, title, host, address, hour, price, thumbnail, image } = this.props.seat;
+    const { navigate } = this.props.navigation;
+    console.log(this.props);
 
     return (
-       <Card onPress={this.onCardPress}>
+       <Card onPress={() => navigate('Detail', seat)}>
         <CardSection>
           <View style={thumbnailContainerStyle}>
             <Image
@@ -124,4 +120,4 @@ const styles = {
   }
 };
 
-export default SeatItem;
+export default connect(StackNavigator)(SeatItem);
