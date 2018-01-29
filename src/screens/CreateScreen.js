@@ -8,7 +8,6 @@ const CreateScreen = () => {
     </View>
   );
 };
-
 CreateScreen.navigationOptions = {
   title: 'Create Seat',
   headerStyle: {

@@ -9,14 +9,22 @@ const Home = StackNavigator({
   },
   Detail: {
     screen: DetailScreen
-  },
+  }
 },{
   initialRouteName: 'Detail',
 });
 
-export const Tab = TabNavigator({
+const Add = StackNavigator({
   Create: {
-    screen: CreateScreen,
+    screen: CreateScreen
+  }
+}, {
+  initialRouteName: 'Create'
+});
+
+export const Tab = TabNavigator({
+  Add: {
+    screen: Add,
     navigationOptions: {
       tabBarLabel: 'Create',
       tabBarIcon: ({ tintColor }) => (

@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import SeatList from '../components/SeatList';
 
-const ListScreen = ({ navigation }) => {
+const ListScreen = () => {
   return (
     <View>
       <SeatList />
