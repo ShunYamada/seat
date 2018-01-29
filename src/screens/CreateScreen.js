@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import SeatCreate from '../components/SeatCreate';
 
 const CreateScreen = () => {
   return (
     <View>
-      <Text>Hello</Text>
+      <SeatCreate />
     </View>
   );
 };
