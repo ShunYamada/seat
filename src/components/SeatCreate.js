@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import { Button, DetailSection, FooterSection } from './common';
+import { View, Text, ScrollView, Picker } from 'react-native';
+import { Button, DetailSection, FooterSection, Input } from './common';
 
 class SeatCreate extends React.Component {
 
@@ -8,61 +8,68 @@ class SeatCreate extends React.Component {
     const { navStyle } = styles;
 
     return (
-      <ScrollView style={{ backgroundColor: '#fff' }}>
-        <DetailSection>
-          <View>
-            <Text style={navStyle}>Selected Photos</Text>
-            <Text></Text>
-          </View>
-        </DetailSection>
+      <View style={{flexDirection:'column',justifyContent:'flex-end'}}>
+        <ScrollView style={{ backgroundColor: '#fff' }}>
+          <DetailSection>
+            <View>
+              <Text style={navStyle}>Selected Photos</Text>
+              <Text></Text>
+            </View>
+          </DetailSection>
 
-        <DetailSection>
-          <View>
-            <Text style={navStyle}>Seat Title</Text>
-            <Text></Text>
-          </View>
-        </DetailSection>
+          <DetailSection>
+            <Input
+              label={'Seat Title'}
+              placeholder={'What is the seat called?'}
+            />
+          </DetailSection>
 
-        <DetailSection>
-          <View>
-            <Text style={navStyle}>Category</Text>
-            <Text></Text>
-          </View>
-        </DetailSection>
+          <DetailSection>
+            <View>
+              <Input
+                label={'Category'}
+                placeholder={'Cafe, office, house ...'}
+              />
+            </View>
+          </DetailSection>
 
-        <DetailSection>
-          <View>
-            <Text style={navStyle}>Open Hours</Text>
-            <Text></Text>
-          </View>
-        </DetailSection>
+          <DetailSection>
+            <View>
+              <Text style={navStyle}>Open Hours</Text>
+              <Text></Text>
+            </View>
+          </DetailSection>
 
-        <DetailSection>
-          <View>
-            <Text style={navStyle}>Address</Text>
-            <Text></Text>
-          </View>
-        </DetailSection>
+          <DetailSection>
+            <View>
+              <Input
+                label={'Address'}
+                placeholder={'Where are you now?'}
+              />
+            </View>
+          </DetailSection>
 
-        <DetailSection>
-          <View>
-            <Text style={navStyle}>Seat Price</Text>
-            <Text></Text>
-          </View>
-        </DetailSection>
+          <DetailSection>
+            <Input
+              label={'Price($)'}
+              keyboardType={'number-pad'}
+            />
+          </DetailSection>
+        </ScrollView>
 
         <FooterSection>
           <Button>
             Create
           </Button>
         </FooterSection>
-      </ScrollView>
+      </View>
     );
   }
 }
 
 const styles = {
   navStyle: {
+    width: 320,
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10

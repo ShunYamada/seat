@@ -7,3 +7,4 @@ export { default as FooterSection } from './FooterSection';
 export { default as Button } from './Button';
 export { default as Confirm } from './Confirm';
 export { default as Decline } from './Decline';
+export { default as Input } from './Input';
