@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { DetailSection, Input } from './common';
 
 class EmployeeForm extends React.Component {
@@ -7,7 +7,7 @@ class EmployeeForm extends React.Component {
     const { navStyle } = styles;
 
     return (
-      <ScrollView style={{ backgroundColor: '#fff' }}>
+      <View style={{ backgroundColor: '#fff' }}>
         <DetailSection>
           <View>
             <Text style={navStyle}>Selected Photos</Text>
@@ -57,7 +57,7 @@ class EmployeeForm extends React.Component {
             value={this.props.price}
           />
         </DetailSection>
-      </ScrollView>
+      </View>
     );
   }
 }

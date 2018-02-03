@@ -84,13 +84,14 @@ class SeatDetail extends React.Component {
               <Text style={infoTextStyle}><Icon style={iconStyle} name={'map-marker'} />Stenier St Hayes St, SanFrancisco</Text>
             </View>
           </DetailSection>
-        </ScrollView>
 
-        <FooterSection>
-          <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
-            Request for $5
-          </Button>
-        </FooterSection>
+          <FooterSection>
+            <Button onPress={() => this.setState({ showModal: !this.state.showModal })}>
+              Request for $5
+            </Button>
+          </FooterSection>
+          
+        </ScrollView>
 
         <Confirm
           visible={this.state.showModal}

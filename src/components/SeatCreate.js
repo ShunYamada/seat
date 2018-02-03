@@ -14,12 +14,14 @@ class SeatCreate extends React.Component {
   render() {
     return (
       <View style={{flexDirection:'column',justifyContent:'flex-end'}}>
-        <SeatForm {...this.props} />
-        <FooterSection>
-          <Button onPress={this.onButtonPress.bind(this)}>
-            Create
-          </Button>
-        </FooterSection>
+        <ScrollView>
+          <SeatForm {...this.props} />
+          <FooterSection>
+            <Button onPress={this.onButtonPress.bind(this)}>
+              Create
+            </Button>
+          </FooterSection>
+        </ScrollView>
       </View>
     );
   }

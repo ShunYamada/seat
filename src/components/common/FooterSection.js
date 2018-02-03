@@ -11,13 +11,11 @@ const FooterSection = (props) => {
 
 const styles = {
   containerStyle: {
-    borderTopWidth: 1,
     padding: 10,
     backgroundColor: '#fff',
     justifyContent: 'flex-start',
     alignItems: 'center',
     flexDirection: 'row',
-    borderColor: '#eee',
     height: 75,
   }
 }
