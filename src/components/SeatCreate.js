@@ -1,64 +1,22 @@
 import React from 'react';
 import { View, Text, ScrollView, Picker } from 'react-native';
-import { Button, DetailSection, FooterSection, Input } from './common';
+import { connect } from 'react-redux';
+import { FooterSection, Button } from './common';
+import SeatForm from './SeatForm';
 
 class SeatCreate extends React.Component {
+  onButtonPress() {
+    const { title, category, address, price } = this.props;
+
+    this.props.seatCreate({ title, category, address, price })
+  }
 
   render() {
-    const { navStyle } = styles;
-
     return (
       <View style={{flexDirection:'column',justifyContent:'flex-end'}}>
-        <ScrollView style={{ backgroundColor: '#fff' }}>
-          <DetailSection>
-            <View>
-              <Text style={navStyle}>Selected Photos</Text>
-              <Text></Text>
-            </View>
-          </DetailSection>
-
-          <DetailSection>
-            <Input
-              label={'Seat Title'}
-              placeholder={'What is the seat called?'}
-            />
-          </DetailSection>
-
-          <DetailSection>
-            <View>
-              <Input
-                label={'Category'}
-                placeholder={'Cafe, office, house ...'}
-              />
-            </View>
-          </DetailSection>
-
-          <DetailSection>
-            <View>
-              <Text style={navStyle}>Open Hours</Text>
-              <Text></Text>
-            </View>
-          </DetailSection>
-
-          <DetailSection>
-            <View>
-              <Input
-                label={'Address'}
-                placeholder={'Where are you now?'}
-              />
-            </View>
-          </DetailSection>
-
-          <DetailSection>
-            <Input
-              label={'Price($)'}
-              keyboardType={'number-pad'}
-            />
-          </DetailSection>
-        </ScrollView>
-
+        <SeatForm {...this.props} />
         <FooterSection>
-          <Button>
+          <Button onPress={this.onButtonPress.bind(this)}>
             Create
           </Button>
         </FooterSection>
@@ -67,13 +25,10 @@ class SeatCreate extends React.Component {
   }
 }
 
-const styles = {
-  navStyle: {
-    width: 320,
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10
-  }
-}
+const mapStateToProps = (state) => {
+  const { title, category, address, price } = state.seatForm;
+
+  return { title, category, address, price };
+};
 
 export default SeatCreate;

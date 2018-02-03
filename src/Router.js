@@ -1,14 +1,45 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { DetailScreen, ListScreen, CreateScreen } from './screens';
+import {
+  DetailScreen,
+  ListScreen,
+  CreateScreen,
+  NotificationScreen,
+  ProfileScreen
+} from './screens';
 
 const Home = StackNavigator({
   List: {
     screen: ListScreen
   },
   Detail: {
-    screen: DetailScreen
+    screen: DetailScreen,
+    navigationOptions: ({navigation}) => ({
+      headerRight: (
+        <TouchableOpacity
+          onPress={()=>navigation.navigate('Profile')}
+          style={styles.headerIconStyle}
+        >
+          <Icon name='account' size={28} style={{color: '#fff'}}/>
+        </TouchableOpacity>
+      ),
+      headerLeft: (
+        <TouchableOpacity
+          onPress={()=>navigation.navigate('Notification')}
+          style={styles.headerIconStyle}
+        >
+          <Icon name='bell' size={28} style={{color: '#fff'}}/>
+        </TouchableOpacity>
+      )
+    })
+  },
+  Notification: {
+    screen: NotificationScreen
+  },
+  Profile: {
+    screen: ProfileScreen,
   }
 },{
   initialRouteName: 'Detail',
@@ -22,20 +53,13 @@ const Add = StackNavigator({
   initialRouteName: 'Create'
 });
 
+const styles = {
+  headerIconStyle: {
+    paddingHorizontal: 10
+  }
+}
+
 export const Tab = TabNavigator({
-  Add: {
-    screen: Add,
-    navigationOptions: {
-      tabBarLabel: 'Create',
-      tabBarIcon: ({ tintColor }) => (
-        <Icon
-          name='camera'
-          size={28}
-          style={{ color: tintColor }}
-        />
-      )
-    }
-  },
   Home: {
     screen: Home,
     navigationOptions: {
@@ -43,6 +67,19 @@ export const Tab = TabNavigator({
       tabBarIcon: ({ tintColor }) => (
         <Icon
           name='home'
+          size={28}
+          style={{ color: tintColor }}
+        />
+      )
+    }
+  },
+  Add: {
+    screen: Add,
+    navigationOptions: {
+      tabBarLabel: 'Create',
+      tabBarIcon: ({ tintColor }) => (
+        <Icon
+          name='camera'
           size={28}
           style={{ color: tintColor }}
         />

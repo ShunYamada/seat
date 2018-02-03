@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SeatDetail from '../components/SeatDetail';
 
 const DetailScreen = () => {
@@ -9,12 +10,11 @@ const DetailScreen = () => {
     </View>
   );
 };
+
 DetailScreen.navigationOptions = {
   title: 'Seat',
   headerStyle: {
     backgroundColor: '#36bfce',
-    justifyContent: 'center',
-    alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,

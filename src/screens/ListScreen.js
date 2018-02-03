@@ -2,10 +2,10 @@ import React from 'react';
 import { View } from 'react-native';
 import SeatList from '../components/SeatList';
 
-const ListScreen = () => {
+const ListScreen = ({ navigation }) => {
   return (
     <View>
-      <SeatList />
+      <SeatList navigation={navigation} />
     </View>
   );
 };

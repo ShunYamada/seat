@@ -12,22 +12,22 @@ class SeatList extends React.Component {
     this.dataSource = ds.cloneWithRows(this.props.seats);
   }
 
-  renderRow(seat) {
-    return <SeatItem seat={seat} />;
+  renderItem({ item }) {
+    return <SeatItem
+      seat={item}
+      navigation={this.props.navigation}
+    />;
   }
 
   render() {
     return (
       <ListView
         dataSource={this.dataSource}
-        renderRow={this.renderRow}
+        keyExtractor={item => item.id}
+        renderItem={this.renderItem.bind(this)}
       />
     );
   }
 }
 
-const mapStateToProps = state => {
-  return { seats: state.seats };
-};
-
-export default connect(mapStateToProps)(SeatList);
+export default connect(null)(SeatList);

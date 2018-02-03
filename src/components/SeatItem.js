@@ -22,11 +22,10 @@ class SeatItem extends React.Component {
       timerTextStyle
     } = styles;
     const { id, title, host, address, hour, price, thumbnail, image } = this.props.seat;
-    const { navigate } = this.props.navigation;
-    console.log(this.props);
+    const { seat, navigation } = this.props;
 
     return (
-       <Card onPress={() => navigate('Detail', seat)}>
+       <Card onPress={() => navigation.navigate('Detail', seat)}>
         <CardSection>
           <View style={thumbnailContainerStyle}>
             <Image
@@ -120,4 +119,4 @@ const styles = {
   }
 };
 
-export default connect(StackNavigator)(SeatItem);
+export default SeatItem;
