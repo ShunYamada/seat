@@ -7,7 +7,8 @@ import {
   ListScreen,
   CreateScreen,
   NotificationScreen,
-  ProfileScreen
+  ProfileScreen,
+  SigninScreen
 } from './screens';
 
 const Home = StackNavigator({
@@ -53,13 +54,7 @@ const Add = StackNavigator({
   initialRouteName: 'Create'
 });
 
-const styles = {
-  headerIconStyle: {
-    paddingHorizontal: 10
-  }
-}
-
-export const Tab = TabNavigator({
+const Main = TabNavigator({
   Home: {
     screen: Home,
     navigationOptions: {
@@ -90,9 +85,26 @@ export const Tab = TabNavigator({
   tabBarOptions: {
     activeTintColor: '#36bfce',
     inactiveTintColor: '#949494',
-    showLabel: false,
     style: {
       backgroundColor: '#fff',
     },
   },
 });
+
+export const Router = StackNavigator({
+  Signin: {
+    screen: SigninScreen,
+  },
+  Main: {
+    screen: Main,
+  },
+}, {
+  initialRouteName: 'Signin',
+  headerMode: 'none'
+});
+
+const styles = {
+  headerIconStyle: {
+    paddingHorizontal: 10
+  }
+}

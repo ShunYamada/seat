@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers';
-import { Tab } from './Router';
+import { Router } from './Router';
 
 const App = () => {
   const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
@@ -17,7 +17,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <View style={{ flex: 1 }}>
-        <Tab />
+        <Router />
       </View>
     </Provider>
   );
