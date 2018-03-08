@@ -43,7 +43,7 @@ const Home = StackNavigator({
     screen: ProfileScreen,
   }
 },{
-  initialRouteName: 'Detail',
+  initialRouteName: 'List',
 });
 
 const Add = StackNavigator({
